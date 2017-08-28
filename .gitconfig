@@ -1,0 +1,34 @@
+[user]
+	name = Mark Langsworth
+	email = mark.langsworth@domain.com.au
+[core]
+    autocrlf = false
+    quotepath = false
+    whitespace = cr-at-eol
+	editor = vim
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+    interactive = auto
+    ui = auto
+[gc]
+    auto = 1
+[alias]
+    b = branch -v
+    r = remote -v
+    t = tag -l
+    unstage = reset HEAD
+    uncommit = reset --soft HEAD^
+    nb = checkout -b
+    db = branch -D
+    dlb = branch -d
+    co = checkout
+    sta = status
+    subpl = submodule -q foreach git pull -q origin master
+    sub = submodule
+    subrvt = submodule -q foreach git reset HEAD --hard
+    cl = clone --recursive 
+    rmb = !sh -c 'git branch -D $1 && git push origin :$1' -
+[push]
+    default = simple
