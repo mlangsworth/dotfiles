@@ -35,7 +35,7 @@ complete -o default -o nospace -F _git g
 # GIT_PS1_SHOWDIRTYSTATE=true
 # GIT_PS1_SHOWSTASHSTATE=true
 
-PROMPT_COMMAND='DIR=`pwd|sed -e "s!$HOME!~!"`; if [ ${#DIR} -gt 30 ]; then CurDir=${DIR:0:12}...${DIR:${#DIR}-15}; else CurDir=$DIR; fi'
+PROMPT_COMMAND='if $(__git_in_working_folder); then CurDir=" $(__git_repo_name) "; else CurDir=`pwd|sed -e "s!$HOME!~!"`; fi'
 PS1="\[\e[1;31;47m\]\$CurDir\[\e[0;37;40m\]\`cmdRes=\$? && echo -en \"\$(__git_ps1)\" && if [ \$cmdRes = 0 ]; then echo -en '\[\e[1;32m\] '; else echo -en '\[\e[1;31m\]'; fi\`\[\e[0;37m\]\$ \[\e[1;32m\]"
 
 # pro cd function
