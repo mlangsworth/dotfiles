@@ -28,15 +28,19 @@ alias d='docker'
 alias dc='docker-compose'
 
 # Autocomplete for 'g' as well
-source ~/.git-completion.bash
+# source ~/.git-completion.bash
 complete -o default -o nospace -F _git g
+
+source ~/.prompt.bash
 
 # GIT_PS1_SHOWUNTRACKEDFILES=true
 # GIT_PS1_SHOWDIRTYSTATE=true
 # GIT_PS1_SHOWSTASHSTATE=true
 
-PROMPT_COMMAND='if $(__git_in_working_folder); then CurDir=" $(__git_repo_name) "; else CurDir=`pwd|sed -e "s!$HOME!~!"`; fi'
-PS1="\[\e[1;31;47m\]\$CurDir\[\e[0;37;40m\]\`cmdRes=\$? && echo -en \"\$(__git_ps1)\" && if [ \$cmdRes = 0 ]; then echo -en '\[\e[1;32m\] '; else echo -en '\[\e[1;31m\]'; fi\`\[\e[0;37m\]\$ \[\e[1;32m\]"
+# printf "\e[0;37;39m"
+
+PROMPT_COMMAND='if $(__git_in_working_folder); then CurDir=" $(__git_repo_name)"; else CurDir=`pwd|sed -e "s!$HOME!~!"`; fi'
+PS1="\[\e[1;31;47m\]\$CurDir \[\e[0;37;40m\]\`cmdRes=\$? && echo -en \"\$(__git_ps1)\" && if [ \$cmdRes = 0 ]; then echo -en '\[\e[1;32m\] '; else echo -en '\[\e[1;31m\]'; fi\`\[\e[0;37m\]\$ \[\e[1;32m\]"
 
 # pro cd function
 pd() {
