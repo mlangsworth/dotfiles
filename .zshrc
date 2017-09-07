@@ -85,6 +85,17 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+
+# HISTORY
+HISTCONTROL=ignoreboth
+
+# append to the history file, don't overwrite it
+setopt APPEND_HISTORY
+
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+HISTSIZE=1000  
+HISTFILESIZE=200000
+
 # NVM
 
 export NVM_DIR="$HOME/.nvm" 
@@ -115,6 +126,7 @@ load-nvmrc
 
 # LS_COLORS='di=0;35':$LS_COLORS ; export LS_COLORS
 # export DISABLE_LS_COLORS="true"
+eval `dircolors ~/.dircolors`
 
 # cd alias for mnt
 function cdm() {
@@ -135,7 +147,6 @@ function cdd() {
     cd /mnt/c/dev/$1
   fi
 }
-
 
 compctl -W /mnt/c/ -/ cdm
 compctl -W /mnt/c/dev -/ cdd
