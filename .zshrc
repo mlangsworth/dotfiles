@@ -166,3 +166,4 @@ alias gl='git log --graph --pretty="format:%C(yellow)%h %Cred%>(10)%ad %Cblue%an
 alias d='docker'
 alias dc='docker-compose'
 
+source /home/mlangsworth/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
